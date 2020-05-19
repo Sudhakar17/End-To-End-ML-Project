@@ -21,3 +21,14 @@ class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
         new_features = np.array((rooms_per_household, population_per_household, bedrooms_per_room))
         x = np.hstack((x, new_features))
         return x
+
+
+
+
+
+def predict_results(input_dict):
+    with open('.\\models\\final_model_grid.pkl', 'rb') as f:
+        model = joblib.load(f)
+    total_features = preprocessing_pipeline(input_dict)
+    predictions = model.predict(total_features)
+    return predictions[0]
