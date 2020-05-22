@@ -19,5 +19,33 @@ We will use the California Housing Prices [dataset](https://www.kaggle.com/camnu
 
 The first seven steps are performed in this [Jupyter Notebook](https://github.com/Sudhakar17/End-To-End-ML-Project/blob/master/End-To-End-ML-Project.ipynb)
 
+## Deployment of the ML model using Flask 
+
+  * [app.py](https://github.com/Sudhakar17/End-To-End-ML-Project/blob/master/app.py) contains the Flask API which gets the features as an input through an API call and request from HTML page.
+  * [utils/price_calculator.py](https://github.com/Sudhakar17/End-To-End-ML-Project/blob/master/utils/price_calculator.py) is the python file which does the preprocessing of the inputs from the HTML page and calculate the median housing price of the house.
+  * [templates/main.html](https://github.com/Sudhakar17/End-To-End-ML-Project/blob/master/templates/main.html) allows user to enter the inputs and display the results.
+
+## Requirements:
+  * Flask
+  * NumPy
+  * Pandas
+  * Scikit-Learn
+  
+## How to run this flask application
+
+  * After cloning this repository, run app.py using the following command to start the flask API
+    * python app.py
+  * Navigate to URL http://localhost:5000
+    * By default, flask will run on port 5000.
+  * You can see the HTML page as below
+    ![Input Variables](images/input-variables.png)
+  * You can use the [sample_test_input.json](sample_test_input.json) for entering the input variables.
+  * After submitting, the calculated median house price is shown like below.
+    ![Results](images/results.png)
+
+
+
+
+
 
 
